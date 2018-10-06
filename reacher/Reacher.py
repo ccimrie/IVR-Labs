@@ -46,7 +46,7 @@ class ReacherEnv(gym.Env):
         self.spaceSize = 6.4
         self.resolution = self.viewerSize/self.spaceSize
         self.init_rod_template()
-        self._seed()
+        self.seed()
         self.world = ode.World()
         #self.world.setGravity((0,-9.81,0))
         self.world.setGravity((0,0,0))
@@ -93,7 +93,7 @@ class ReacherEnv(gym.Env):
         self.P_gains = np.array([1000,1000,1000])
         self.D_gains = np.array([70,50,20])
 
-    def _seed(self, seed=None):
+    def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
@@ -140,7 +140,7 @@ class ReacherEnv(gym.Env):
         else:
             self.targetTime=0
 
-    def _step(self,(jas,jvs,target_ja,torques)):
+    def step(self,(jas,jvs,target_ja,torques)):
         if(self.controlMode=="POS"):
             jointAngles = np.array([self.j1.getAngle(),self.j2.getAngle(),self.j3.getAngle()])
             jointVelocities = np.array([self.j1.getAngleRate(), self.j2.getAngleRate(), self.j3.getAngleRate()])
@@ -174,17 +174,17 @@ class ReacherEnv(gym.Env):
             self.targetPos=self.rand_target()
             self.targetTime=0
 
-    def _reset(self):
+    def reset(self):
         high = np.array([np.pi, 1])
         self.state = self.np_random.uniform(low=-high, high=high)
         self.last_u = None
-        return self._get_obs()
+        return self.get_obs()
 
-    def _get_obs(self):
+    def get_obs(self):
         theta, thetadot = self.state
         return np.array([np.cos(theta), np.sin(theta), thetadot])
 
-    def _render(self, mode='human', close=False):
+    def render(self, mode='human', close=False):
         if close:
             if self.viewer is not None:
                 self.viewer.close()
