@@ -1,0 +1,7 @@
+# Installation folders
+ode/*
+ode-build/*
+VRInstall/*
+
+# Compiled python modules
+*.pyc
