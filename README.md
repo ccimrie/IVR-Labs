@@ -17,7 +17,7 @@ Follow the next steps according to your situation.
 #### Without an existing Conda installation
 4. Install python-pip: `sudo apt install python-pip`
 5. Upgrade python-pip: `sudo pip install --upgrade pip`
-6. Install required packages: `sudo apt install autotools-dev libtool automake autoconf mercurial`
+6. Install required packages: `sudo apt install autotools-dev libtool automake autoconf mercurial pkg-config`
 7. Run installation script: `source install.bash` :+1:
 
 #### With an existing Conda installation
