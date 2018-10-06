@@ -4,18 +4,7 @@
 - [How to run](#how-to-run)
 
 ## Installation guide
-1. Install git: `sudo apt install git`
-2. Clone this repo: `git clone https://github.com/ccimrie/IVR-Labs.git`
-3. cd to cloned folder: `cd IVR-Labs`
-
-Follow the next steps according to your situation.
-
-### Only on DICE machines
-4. Run installation script: `source install.bash` :+1:
-
-### Only on self-managed machines (Non-DICE or VM)
-
-#### Virtual Machine Installation 
+### Virtual Machine Installation 
 If you are using Windows you can install a Virtual Machine (VM) that can run Ubuntu and from here you will be able to install easier the openai gym framework. The steps briefly are:
 
 1. Download the correct installer: <https://www.virtualbox.org/wiki/Downloads>
@@ -32,9 +21,19 @@ If you are using Windows you can install a Virtual Machine (VM) that can run Ubu
 
 5. Here you will then install Ubuntu onto your VM. (When asked what to do with regards to the hard disk click use all, do not worry this is talking about the virtual hard disk). <https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop-1604#0>
 
-6. Here follow the next appropriate steps regarding if you are using Conda or not for the simulator installation.
-
 This is a brief set of steps and I recommend also looking at this link as it is a good reference: <https://medium.com/@tushar0618/install-ubuntu-16-04-lts-on-virtual-box-desktop-version-30dc6f1958d0>
+
+### Initial steps for all machines
+1. Install git: `sudo apt install git`
+2. Clone this repo: `git clone https://github.com/ccimrie/IVR-Labs.git`
+3. cd to cloned folder: `cd IVR-Labs`
+
+Follow the next steps according to your situation.
+
+### Only on DICE machines
+4. Run installation script: `source install.bash` :+1:
+
+### Only on self-managed machines (Non-DICE or VM)
 
 #### Without an existing Conda installation
 4. Install python-pip: `sudo apt install python-pip`
