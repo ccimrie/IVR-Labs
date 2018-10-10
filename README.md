@@ -31,6 +31,7 @@ This is a brief set of steps and I recommend also looking at this link as it is 
 Follow the next steps according to your situation.
 
 ### Only on DICE machines
+4. Clear the pip cache which is in the home directory: `rm -rf .cache/pip/`
 4. Run installation script: `source install.bash` :+1:
 
 ### Only on self-managed machines (Non-DICE or VM)
